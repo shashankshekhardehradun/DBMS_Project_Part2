@@ -1,0 +1,300 @@
+<div class="container">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <!-- <span class="pull-right">(<strong>5</strong>) items</span> -->
+                        <h2>Complete your booking</h2>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                            <h3>Date of Visit:</h3>
+                            <input type="date" style="margin-top: 10px; border-radius: 5px; padding:5px;" />
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                            <h3>Visitor Details</h3>
+                            <form [formGroup]="formVisitor">
+                                <div formArrayName="visitor">
+                                    <div *ngFor="let visitorGroup of visitor?.controls; let i = index"
+                                        [formGroupName]="i">
+                                        <table class="table shoping-cart-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="desc">
+
+                                                        <input type="text" formControlName="fName" name="fName"
+                                                            placeholder="First Name"
+                                                            style="margin: 10px; margin-left: 0px; border-radius: 5px; padding:5px;" />
+                                                        <input type="text" formControlName="lName" name="lName"
+                                                            placeholder="Last Name"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;" />
+                                                        <input type="date" formControlName="dob" name="dob"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;" />
+                                                        <label for="member">Member:</label>
+
+                                                        <select name="member" formControlName="member"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;">
+                                                            <option value="yes">Yes</option>
+                                                            <option value="no">No</option>
+                                                        </select>
+                                                    </td>
+                                                    <td><s class="text-muted">$ {{basePrice}}</s>
+                                                        <h4 name="price" id="price" formControlName="price"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;">
+                                                            ${{finalPrice}}
+                                                        </h4>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" (click)="addVisitor()">Add
+                                    Visitor</button>
+                                <button type="submit" (click)="removeVisitor()" style=" margin: 30px;"><img
+                                        src="../../../assets/images/icons/remove.png" style="height: 30px;" /></button>
+
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+
+                            <form [formGroup]="formParking">
+                                <div formArrayName="parking">
+                                    <div *ngFor="let parkingGroup of parking?.controls; let i = index"
+                                        [formGroupName]="i">
+                                        <h3>Parking Details</h3>
+                                        <table class="table shoping-cart-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="desc">
+                                                        <label for="inTime">In Time:</label>
+                                                        <select name="inTime" formControlName="inTime"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;">
+                                                            <option value="9">9:00 AM</option>
+                                                            <option value="9.5">9:30 AM</option>
+                                                            <option value="10">10:00 AM</option>
+                                                            <option value="10.5">10:30 AM</option>
+                                                            <option value="11">11:00 AM</option>
+                                                            <option value="11.5">11:30 AM</option>
+                                                            <option value="12">12:00 PM</option>
+                                                            <option value="12.5">12:30 PM</option>
+                                                            <option value="13">1:00 PM</option>
+                                                            <option value="13.5">1:30 PM</option>
+                                                            <option value="14">2:00 PM</option>
+                                                            <option value="14.5">2:30 PM</option>
+                                                            <option value="15">3:00 PM</option>
+                                                            <option value="15.5">3:30 PM</option>
+                                                            <option value="16">3:00 PM</option>
+                                                            <option value="16.5">3:30 PM</option>
+                                                        </select>
+                                                        <label for="outTime">Out Time:</label>
+                                                        <select name="outTime" formControlName="outTime"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;">
+                                                            <option value="9">9:00 AM</option>
+                                                            <option value="9.5">9:30 AM</option>
+                                                            <option value="10">10:00 AM</option>
+                                                            <option value="10.5">10:30 AM</option>
+                                                            <option value="11">11:00 AM</option>
+                                                            <option value="11.5">11:30 AM</option>
+                                                            <option value="12">12:00 PM</option>
+                                                            <option value="12.5">12:30 PM</option>
+                                                            <option value="13">1:00 PM</option>
+                                                            <option value="13.5">1:30 PM</option>
+                                                            <option value="14">2:00 PM</option>
+                                                            <option value="14.5">2:30 PM</option>
+                                                            <option value="15">3:00 PM</option>
+                                                            <option value="15.5">3:30 PM</option>
+                                                            <option value="16">3:00 PM</option>
+                                                            <option value="16.5">3:30 PM</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <h4 formControlName="parkingPrice" name="parkingPrice"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;">
+                                                            ${{parkingFixedPrice}}
+                                                        </h4>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" (click)="addParking()">Add
+                                    Parking</button>
+                                <button type="submit" (click)="removeParking()" style=" margin: 30px;"><img
+                                        src="../../../assets/images/icons/remove.png" style="height: 30px;" /></button>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+                            <h3>Show Details</h3>
+                            <form [formGroup]="formShow">
+                                <div formArrayName="show">
+                                    <div *ngFor="let showGroup of show?.controls; let i = index" [formGroupName]="i">
+
+                                        <table class="table shoping-cart-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="desc">
+
+                                                        <!-- <label for="shows">Choose:</label> -->
+
+                                                        <select name="shows" formControlName="shows"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;">
+                                                            <option value="THE WAND CHOOSES THE WIZARD">THE WAND CHOOSES
+                                                                THE WIZARD</option>
+                                                            <option value="THE TRIWIZARD SPIRIT RALLY">THE TRIWIZARD
+                                                                SPIRIT RALLY</option>
+                                                            <option value="PHARAOH'S TREASURE HUNT">PHARAOH'S TREASURE
+                                                                HUNT</option>
+                                                            <option value="WALKING WITH THE DINOSAURS 3D">WALKING WITH
+                                                                THE DINOSAURS 3D</option>
+                                                            <option value="DINO-SOARIN">DINO-SOARIN</option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input name="showQuantity" type="number" value="1"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;"
+                                                            formControlName="showQuantity">
+                                                    </td>
+                                                    <td>
+                                                        <h4 formControlName="showPrice" name="showPrice"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;">
+                                                            ${{showFixedPrice}}
+                                                        </h4>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" (click)="addShow()">Add
+                                    Show</button>
+                                <button type="submit" (click)="removeShow()" style=" margin: 30px;"><img
+                                        src="../../../assets/images/icons/remove.png" style="height: 30px;" /></button>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <div class="ibox-content">
+                        <div class="table-responsive">
+
+                            <form [formGroup]="formStore">
+                                <div formArrayName="stores">
+                                    <div *ngFor="let storeGroup of stores?.controls; let i = index" [formGroupName]="i">
+                                        <h3>Store Details</h3>
+                                        <table class="table shoping-cart-table">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="desc">
+                                                        <label for="store">Stores:</label>
+                                                        <select name="store" formControlName="store"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;">
+                                                            <option value="Pizza Parlour">Pizza Parlour</option>
+                                                            <option value="Florean Fortescue's Ice-Cream Parlour">
+                                                                Florean Fortescue's Ice-Cream Parlour</option>
+                                                            <option value="Three Broomsticks">Three Broomsticks</option>
+                                                        </select>
+                                                        <label for="item">Items:</label>
+                                                        <select name="item" formControlName="item"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;">
+                                                            <option value="Chocolate Ice-Cream">Chocolate Ice-Cream
+                                                            </option>
+                                                            <option value="Banana Split Sundae">Banana Split Sundae
+                                                            </option>
+                                                        </select>
+                                                    </td>
+                                                    <td>
+                                                        <input id="storeQuantity" type="number" value="1"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;"
+                                                            formControlName="storeQuantity">
+                                                    </td>
+                                                    <td>
+                                                        <h4 name="storePrice" formControlName="storePrice"
+                                                            style="margin: 10px; border-radius: 5px; padding:5px;">
+                                                            $10
+                                                        </h4>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary" (click)="addStore()">Add
+                                    Store</button>
+                                <button type="submit" (click)="removeStore()" style=" margin: 30px;"><img
+                                        src="../../../assets/images/icons/remove.png" style="height: 30px;" /></button>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+
+                    <div class="ibox-content">
+                        <button class="btn btn-primary pull-right"><i class="fa fa fa-shopping-cart"></i>
+                            Checkout</button>
+                        <button class="btn btn-white"><i class="fa fa-arrow-left"></i> Continue shopping</button>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-3">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Cart Summary</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <span>
+                            Total
+                        </span>
+                        <h2 class="font-bold">
+                            $390,00
+                        </h2>
+
+                        <hr>
+                        <div class="m-t-sm">
+                            <div class="btn-group">
+                                <a href="#" class="btn btn-primary btn-sm"><i class="fa fa-shopping-cart"></i>
+                                    Checkout</a>
+                                <a href="#" class="btn btn-white btn-sm"> Cancel</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Support</h5>
+                    </div>
+                    <div class="ibox-content text-center">
+                        <h3><i class="fa fa-phone"></i> +43 100 783 001</h3>
+                        <span class="small">
+                            Please contact with us if you have any questions. We are avalible 24h.
+                        </span>
+                    </div>
+                </div>
+
+                <p class="font-bold">
+            </div>
+        </div>
+    </div>
+</div>
