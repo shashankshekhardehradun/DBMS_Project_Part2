@@ -1,7 +1,7 @@
 # DBMS Final Project
 
 ## Requirements
-nvm: 1.1.11
+nvm: 1.1.11 \
 Angular CLI: 15.2.7
 Node: 16.20.0
 Package Manager: npm 8.19.4
