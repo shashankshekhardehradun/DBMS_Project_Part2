@@ -6,9 +6,9 @@ Angular CLI: 15.2.7 \
 Node: 16.20.0 \
 Package Manager: npm 8.19.4 \
 OS: win32 x64 \
-Angular: 15.2.8 \
+Angular: 15.2.8 
 >> animations, common, compiler, compiler-cli, core, forms \
->> localize, platform-browser, platform-browser-dynamic, router\
+>> localize, platform-browser, platform-browser-dynamic, router
 
 | Package     | Version |
 | ----------- | ----------- |
