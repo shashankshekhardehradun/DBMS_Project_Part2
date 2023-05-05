@@ -12,7 +12,7 @@ Angular: 15.2.8
 ... localize, platform-browser, platform-browser-dynamic, router
 
 Package                         Version
----------------------------------------------------------
+-------------------------------------------------
 @angular-devkit/architect       0.1502.7
 @angular-devkit/build-angular   15.2.7
 @angular-devkit/core            15.2.7
