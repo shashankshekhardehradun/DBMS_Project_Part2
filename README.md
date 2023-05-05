@@ -1,4 +1,4 @@
-# DBMS_Final_Project
+# DBMS Final Project
 
 ## Requirements
 nvm: 1.1.11
