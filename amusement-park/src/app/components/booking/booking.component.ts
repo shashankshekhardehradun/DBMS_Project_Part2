@@ -35,7 +35,8 @@ export class BookingComponent implements OnInit {
         })
       ])
     });
-
+  
+    //call API end point to fetch shows info from the SQL database
     this.formShow = new FormGroup({
       show: new FormArray([
         new FormGroup({
@@ -45,6 +46,7 @@ export class BookingComponent implements OnInit {
         })
       ])
     });
+    //call API end point to fetch stores info from the SQL database
 
     this.formStore = new FormGroup({
       stores: new FormArray([
@@ -138,6 +140,6 @@ export class BookingComponent implements OnInit {
       })
     );
   }
-
+  //insert API end point to store all booking data into the database
 
 }
