@@ -39,7 +39,7 @@ import { BookingComponent } from './components/booking/booking.component';
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
-    // provider used to create fake backend
+    // insert API end point and replace the fake backend to store user registration data in database
     fakeBackendProvider
   ],
   bootstrap: [AppComponent]
