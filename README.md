@@ -24,6 +24,6 @@ Angular: 15.2.8
 ## Instructions
 
 - Download nvm 1.1.11
-- Run Command Prompt with "Use as Administrator"
+- Run Command Prompt (or Power Shell) as Administrator
 - npm install -g @angular/cli
 - ng serve
