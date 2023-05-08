@@ -10,6 +10,8 @@ Angular: 15.2.8
 >> animations, common, compiler, compiler-cli, core, forms \
 >> localize, platform-browser, platform-browser-dynamic, router
 
+MySQL: 8.0.33
+
 | Package     | Version |
 | ----------- | ----------- |
 | @angular-devkit/architect | 0.1502.7 |
